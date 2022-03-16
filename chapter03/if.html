@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문 &gt; 조건문</title>
+    <style>
+        .good{
+            color: blue;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <h1>제어문</h1>
+    <p>프로그램의 실행 순서 (=흐름)을 제어하는 문장(=문법, 구문)이다.</p>
+    <p>제어문은 크게 1)조건문, 선택문, 반복문으로 구분한다.</p>
+
+    <h2>조건문</h2>
+    <p>조건식의 값이 true,false 에 따라 각가 다른 코드를 실행하는 문법</p>
+    <p>특정조건에 의해서 프로그램 실행이 분기에 따라 나눠지는것</p>
+    <ol>
+        <li>단순 if</li>
+        <li>if - else</li>
+        <li>if - else if</li>
+        <li>중첩if</li>
+    </;o>
+    <h3>단순 if</h3>
+    <p>조건식이 true 일때만 실행되는 구문, false 일때는 실행 x</p>
+    <code>
+        <pre>
+            if(조건식){
+                ....자바스크립트 코드들....;
+            }
+        </pre>
+    </code>
+    <h4>단순 if 적용예제1</h4>
+    <script>
+        var num = 10; //숫자 와 문자("",'')
+        if (num < 500 && num % 2 == 0){
+            document.write(num+"은 짝수이고 500보다 작다.", "<br>");
+        }
+        document.write("프로그램이 종료되었습니다.", "<br>");
+    </script>
+    <h4>단순 if 적용예제2</h4>
+    <script>
+        // p.63 조건식에 논리형 데이터가 아닌 (true, false) 다른 형 (data, type)이 올 경우
+        // 0, null, "(빈문자)", undefined : 항상 false [외워라]
+        // 그 외는 항상 true : 1,10,100, ..... 아래 문장이 실행됨
+        if(1){
+            document.write("hello!", "<br>");
+        }
+    </script>
+    <h4>단순 if 코딩해보세요 p.62</h4>
+    <script>
+        // // 방문자에세 하루동안 걸음수를 입력받고 10,000보 이상이면
+        // // 결과를 출력 ex)매우 좋은 습관을 가지고 계시네요!
+        // var walk_amount = Number(prompt("하루동안 걸음수를 입력하세요."));
+        // // walk_amount = Number(walk_amount);
+        // console.log(walk_amount, typeof walk_amount);
+        // // 입력한 걸음수, 걸음수의 자료형 확인
+        // if(walk_amount >= 10000){
+        //     document.write("<p class=\"good\">매우 좋은 습관을 가지고 계시네요.", "<br>");
+        // }
+    </script>
+    <h3> if - else</h3>
+    <p>단순 if 는 조건식이 true 일때만 실행되지만, if - else 는 true 일때와 false 일때 실행하는 구문이 따로 존재함</p>
+    <code>
+        <pre>
+            if(조건식){
+                ..true 일때 실행코드..;
+            }else{
+                ..false 일때 실행코드..;
+            }
+        </pre>
+    </code>
+    <h4> if - else 코딩해보세요. p.65</h4>
+    <script>
+        // parseInt(): 정수로 변환, 소숫점을 버림
+        // mathCeil(?): 
+        // ???():
+        var like_num = parseInt(prompt("좋아하는 숫자를 입력하세요."));
+        if (like_num%2==0){
+            // 2로 나눈 나머지가 0 ->짝수
+            document.write("입력한 숫자값 "+like_num+"은 짝수입니다.");
+            alert("입력한 숫자값 "+like_num+"은 짝수입니다.");
+        }else{ //아니면...으로 해석
+            //2로 나눈 나머지 1 -> 홀수
+            document.write("입력한 숫자값 "+like_num+"은 홀수입니다.");
+            alert("입력한 숫자값 "+like_num+"은 홀수입니다.");
+        }
+    </script>
+</body>
+</html>
