@@ -13,8 +13,8 @@
             display: none;
         }
         #true_popup, #false_popup{
-            width: 400px;
-            height: 450px;
+            /* width: 400px;
+            height: 450px; */
             position: absolute;
             box-sizing: border-box;
             padding: 50px;
@@ -31,6 +31,7 @@
             color: antiquewhite;
             padding: 5px 15px;
             border-style: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -66,6 +67,8 @@
     <script>
         //탈퇴버튼 찾기
         var exit_btn = document.querySelector("#member_exit")
+        //탈퇴버튼 옆 취소 버튼 찾기
+        var  cancel_exit = document.querySelector("#cancel_exit")
         //팝업창 찾기
         var true_popup = document.querySelector('#true_popup')
         var false_popup = document.querySelector('#false_popup')
@@ -78,12 +81,22 @@
         })
         //탈퇴버튼 클릭하면 confirm을 띄운다.
         exit_btn.addEventListener("click", function(){
-            var user_chice = confirm("정말로 탈퇴하시겠습니까?")
-            if(user_chice){
+            var user_choice = confirm("정말로 탈퇴하시겠습니까?")
+            if(user_choice){
                 true_popup.classList.remove("hidden"); //hidden 클래스를 지워
             } else {
                 // console.log ("지금은 없으나, 취소안내 팝업창을 준비해주세요.")
                 false_popup.classList.remove("hidden"); //hidden 클래스를 지워
+            }
+        })
+        //취소버튼을 누르면 초기화면으로 돌아감
+        cancel_exit.addEventListener("click",function(){
+            var user_back = alert("초기화면으로 돌아갑니다.")
+            console.log(user_back, typeof user_back);
+            if(user_back){
+                location.href = "https://naver.com";
+            } else{
+                location.href = "/chapter03/confirm.html"
             }
         })
         // //p.66 회원 탈퇴 여부를 물을때.
