@@ -92,12 +92,13 @@
         //취소버튼을 누르면 초기화면으로 돌아감
         cancel_exit.addEventListener("click",function(){
             var user_back = alert("초기화면으로 돌아갑니다.")
+            location.href = "/chapter03/confirm.html"
             console.log(user_back, typeof user_back);
-            if(user_back){
-                location.href = "https://naver.com";
-            } else{
-                location.href = "/chapter03/confirm.html"
-            }
+            // if(user_back){
+            //     location.href = "https://naver.com";
+            // } else{
+            //     location.href = "/chapter03/confirm.html"
+            // }
         })
         // //p.66 회원 탈퇴 여부를 물을때.
         // var member_exit = confirm("탈퇴하시겠습니까?");
