@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마켓한울</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/04c1ea1f1c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../hanul_market/css/style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <h1 class="d_none">마켓한울 로그인</h1>
+    <header>
+        <div class="header_wrap">
+            <div class="header_top">
+                <ul class="top_links d_flex">
+                    <li><a href="#">처음으로</a></li>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">사이트맵</a></li>
+                </ul>
+            </div>
+            <div class="logo">마켓한울</div>
+            <nav class="main_nav">
+                <ul id="gnb" class="d_flex justyfy_center column_20 my_5">
+                    <li>
+                        <a href="#">최저가 상품</a>
+                    </li>
+                    <li>
+                        <a href="#">인기상품</a>
+                    </li>
+                    <li>
+                        <a href="#">신선식품</a>
+                    </li>
+                    <li>
+                        <a href="#">회사소개</a>
+                    </li>
+                    <li>
+                        <a href="#">고객센터 </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="hero">
+        <img src="https://picsum.photos/1920/500" alt="오늘 장보기, 마켓 한울에서!">
+    </div>
+    <section id="main">
+        <div class="main_wrap">
+            <h2>회원로그인</h2>
+            <div class="banner_form">
+                <div class="banner">
+                    <img src="https://picsum.photos/400/400" alt="placeholder">
+                </div>
+                <form id="login_form" autocomplete="off">
+                    <ul>
+                        <li>
+                            <label for="user_id">아이디</label>
+                            <input type="text" id="user_id" placeholder="계정명">
+                        </li>
+                        <li>
+                            <label for="user_pw">비밀번호</label>
+                            <input type="password" id="user_pw" placeholder="기호, 영어, 숫자 조합, 7자 이상">
+                            <!-- <input type="password" required id="user_pw" placeholder="기호, 영어, 숫자 조합, 7자 이상"> -->
+                        </li>
+                        <li>
+                            <input type="submit" value="로그인" id="go_login">
+                        </li>
+                        <li>
+                            <a href="#">아이디/비밀번호 찾기</a>
+                            <a href="#">고객센터</a>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer_wrap">
+            <div class="logo2">로고이미지</div>
+            <address>사이트 정보, 저작권 표시, 전화번호, 사업자번호 등등...</address>
+        </div>
+    </footer>
+    <script src="../hanul_market/script/market_hanul.js"></script>
+</body>
+</html>
