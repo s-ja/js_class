@@ -5,6 +5,7 @@
 - 변수(variables)
 - 연산자(operators)
 - 제어문(control statement)(syntax) : ~ing
+- 선택문 : switch - case
 
 # mission
 - p.58 mission 1,2

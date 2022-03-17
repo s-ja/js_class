@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문 &gt; 선택문</title>
+</head>
+<body>
+    <h1>제어문</h1>
+    <h2>선택문</h2>
+    <p>변수에 저장된 값을 비교해서 일치하는 경우, 해당 코드를 실행하는 구문</p>
+    <code>
+        <pre>
+            
+        </pre>
+    </code>
+    <h2>switch 예시</h2>
+    <script>
+        //즐겨사용하는 포털 사이트를 질의 응답창을 이용해 물어보고, 일치하는 포털 사이트로 URL을 리다이렉트
+        //prompt()
+        //값 ....ㅇㅁㄴ라ㅓㅁㄴㅇ;ㅣㅏ러
+
+        var like_site = prompt("즐거찾는 포털 사이트 이름은?");
+        if(like_site.toLocaleLowerCase()==="naver"){
+            like_site = "네이버"
+        }else if(like_site.toLocaleLowerCase()==="daum"){
+            like_site = "다음"
+        }else if(like_site.toLocaleLowerCase()==="google"){
+            like_site = "구글"
+        }
+        console.log(like_site);
+        var target_url;
+        switch(like_site){
+            case "네이버" : target_url="naver.com";
+            break;
+            case "다음" : target_url="daum.net"
+            break;
+            case "구글" : target_url="google.com"
+            break;
+            default:alert("네이버, 구글, 다음 셋 중에 하나를 입력하세요.")
+        }
+        if(target_url){
+            location.href="https://"+target_url
+        }
+    </script>
+</body>
+</html>
