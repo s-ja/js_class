@@ -89,7 +89,7 @@ a, a:link{
 .banner_form form{
     /* float: right; */
     width: 60%;
-    background: aquamarine;
+    border: 1px solid #333;
 }
 
 footer{
@@ -101,6 +101,7 @@ footer{
     max-width: 1190px;
     margin: 100px auto;
     margin: 1rem 0;
+    padding: 10px 0;
     text-align: center;
 }
 .logo2{
