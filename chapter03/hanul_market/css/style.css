@@ -90,6 +90,7 @@ a, a:link{
     width: 60%;
     box-sizing: border-box;
     padding: 0 0 0 5%;
+    align-items: center;
     /* border: 1px solid #999; */
 }
 .form label{
@@ -97,7 +98,7 @@ a, a:link{
     width: 100px;
 }
 .user_input{
-    width: calc(100% - 120px);
+    width: calc(100% - 110px);
     padding: 10px 0;
     text-indent: 1rem;
 }
