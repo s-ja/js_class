@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문 조건문</title>
+</head>
+<body>
+    <h1>if~ else if</h1>
+    <p>두가지 이상의 조건식과 정해놓은 조건을 만족하지 않았을 때
+        실행되는 코드로 이뤄져 있습니다.
+    </p>
+    <code>
+        <pre>
+            if(조건식1){
+            조건식 1이 true 면 실행될 코드1;
+        } else if(조건식2){
+            조건식 2가 true면 실행될 코드2;
+        } else if(조건식 3,4,5,....){
+            조건식 3 4 5 가 true 면 실행될 코드
+        } else{
+            조건식 5까지 일치하는게 없으면 실행될 코드
+        }
+        </pre>
+    </code>
+    <h2>if ~ else if 예시</h2>
+    <p>질의 응답창을 이용해서,현재는 몇월인지 묻고...</p>
+    <script>
+        // prompt() vs confirm() : 차이를 구별
+        // 계절구분 :
+        // 봄 : 3 4 5
+        // 여름: 6 7 8
+        // 가을: 9 10 11
+        // 겨울: 12 1 2 (나머지)
+        var mon = prompt("현재는 몇 월 입니까?", "예) 3월이면 3 입력")
+        //  문자와 문자를 더하면 문자로 됨 (Number() vs String())
+        if (mon >= 9 && mon <= 11){
+            document.write("독서의 계절, 가을입니다.", "<br>"); //body출력, html
+            //alert();// 경고, 알림
+            //console.log(); //오류 찾아서 수정하는 목적, 디버깅
+        } else if(mon>=6 && mon<=8){
+            document.write("물놀이하기 좋은 여름입니다.", "<br>");
+        }else if(mon>=3 && mon<=5){
+            document.write("꽃이피는 계절, 봄입니다.");
+        } else{
+            document.write("눈이 내리는 계절, 겨울입니다.", "<br>");
+        }
+    </script>
+</body>
+</html>
