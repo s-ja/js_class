@@ -52,30 +52,32 @@
     <section id="main">
         <div class="main_wrap">
             <h2>회원로그인</h2>
-            <div class="banner_form">
+            <div class="banner_form d_flex">
                 <div class="banner">
                     <img src="https://picsum.photos/400/400" alt="placeholder">
                 </div>
-                <form id="login_form" autocomplete="off">
-                    <ul>
-                        <li>
-                            <label for="user_id">아이디</label>
-                            <input type="text" id="user_id" placeholder="계정명">
-                        </li>
-                        <li>
-                            <label for="user_pw">비밀번호</label>
-                            <input type="password" id="user_pw" placeholder="기호, 영어, 숫자 조합, 7자 이상">
-                            <!-- <input type="password" required id="user_pw" placeholder="기호, 영어, 숫자 조합, 7자 이상"> -->
-                        </li>
-                        <li>
-                            <input type="submit" value="로그인" id="go_login">
-                        </li>
-                        <li>
-                            <a href="#">아이디/비밀번호 찾기</a>
-                            <a href="#">고객센터</a>
-                        </li>
-                    </ul>
-                </form>
+                <div class="form">
+                    <form id="login_form" autocomplete="off">
+                        <ul>
+                            <li>
+                                <label for="user_id">아이디</label>
+                                <input type="text" id="user_id" placeholder="계정명" class="user_input">
+                            </li>
+                            <li>
+                                <label for="user_pw">비밀번호</label>
+                                <input type="password" id="user_pw" placeholder="기호, 영어, 숫자 조합, 7자 이상" class="user_input">
+                                <!-- <input type="password" required id="user_pw" placeholder="기호, 영어, 숫자 조합, 7자 이상"> -->
+                            </li>
+                            <li>
+                                <input type="submit" value="로그인" id="go_login">
+                            </li>
+                            <li>
+                                <a href="#">아이디/비밀번호 찾기</a>
+                                <a href="#">고객센터</a>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
