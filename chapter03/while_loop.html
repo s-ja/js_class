@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>제어문 &gt; 반복문</title>
+    <style>
+        .blue{
+            color: blue;
+        }
+        .red{
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <h1>반복문 p.74</h1>
@@ -26,16 +34,6 @@
     <script>
         //안녕하세요를 10번 출력하자
         // 1 ~ 100의 합을 구해서 반복문 종료후 출력해보자
-        // document.write("안녕하세요", "<br>");
-        // document.write("안녕하세요", "<br>");
-        // document.write("안녕하세요", "<br>");
-        // document.write("안녕하세요", "<br>");
-        // document.write("안녕하세요", "<br>");
-        // document.write("안녕하세요", "<br>");
-        // document.write("안녕하세요", "<br>");
-        // document.write("안녕하세요", "<br>");
-        // document.write("안녕하세요", "<br>");
-        // document.write("안녕하세요", "<br>");
         // var i = 1; //변수명은 보통 의미를 알 수 있게끔 길게 사용하는 것을 추천, 하지만 반복문의 변수는 반복 횟수만을 적기 때문에 짧게 적기도 함
         // var total = null; //반복문을 통해 i가 변경되는 값을 대입
         // while (i <= 1000){
@@ -46,14 +44,40 @@
         // }
         // document.write("1~100의 합 : "+total, "<br>");
         //1부터 30까지의 수중 2의 배수 이면서(and) 6의 배수인 숫자만을 출력하는 예제
-        var i = 1;
-        // var end_number = 30;
-        while (i <=30){
-            if( i % 2 == 0 && i % 6 == 0){
-                document.write(i, "<br>");
-            }
-            i++;
-        }
+        // var i = 1;
+        // // var end_number = 30;
+        // while (i <=30){
+        //     if( i % 2 == 0 && i % 6 == 0){
+        //         document.write(i, "<br>");
+        //     }
+        //     i++;
+        // }
+
+        // 1~30까지 : 증가 방향 (++), 20~10: 감소방향 (--)
+        //20 부터 10까지 짝수일때 파랑, 홀수일때 빨강
+        // true, false 일때 따로 실행하는 구문 : if~ else
+        // var j =20;
+        // while(j >= 10){
+        //     if(j % 2 == 0){
+        //         // document.write("<p  style=\"color:blue\" class=\"blue\">"+j+"<\p>");
+        //         document.write("<p class=\"blue\">"+j+"<\p>");
+        //         }else{
+        //             document.write("<p class=\"red\">"+j+"<\p>");
+        //     }
+        //     j--;
+        // }document.write("식이 종료되었습니다", "<br>");
+    </script>
+    <h3>do ~ while 반복문</h3>
+    <p>while 반복문은 조건식을 비교해서 반복을 수행하지만, do~ while 반복문은 조건식이 나중에 위치해서 조건식이 거짓이라 하더라도
+        한번은 실행되는 반복문
+    </p>
+    <h4>do~while 반복문 예시</h4>
+    <script>
+        var i=10;
+        do {
+            document.write("hello", "<br>");
+            i++
+        }while(i<3)
     </script>
 </body>
 </html>
