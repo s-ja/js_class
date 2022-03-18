@@ -6,6 +6,7 @@
 - 연산자(operators)
 - 제어문(control statement)(syntax) : ~ing
 - 선택문 : switch - case
+- 반복문 while, do_while, for
 
 # mission
 - p.58 mission 1,2

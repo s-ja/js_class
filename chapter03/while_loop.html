@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문 &gt; 반복문</title>
+</head>
+<body>
+    <h1>반복문 p.74</h1>
+    <p>코드를 원하는 만큼 반복하는 , 실행하는 구문</p>
+    <p>안녕하세요를 10번 반복하려면 </p>
+    <ul>
+        <li>while 반복문: 가장 간단한 반복문, 반드시 변수를 먼저 선언해야 함</li>
+        <li>do ~ while 반복문 : 거희 사용하지 않음, 조건식이 거짓이어도 1번은 무조건 실행</p>
+        <li>
+            <ul>
+                <li>for 반복문 : 반복문을 예기하면 보통 for문을 예기하는 것으로 생각해도 됨</li>
+                <li>for ~ of : 배열(array)</li>
+                <li>for ~  in: </li>
+            </ul>
+        </li>
+    </ul>
+    <h3>while 반복문</h3>
+    <p>가장 간단하고 사용이 쉽지만, 무한 반복에 빠질 수 있음, 사용에 주의를 요함</p>
+    <script>
+        //안녕하세요를 10번 출력하자
+        // 1 ~ 100의 합을 구해서 반복문 종료후 출력해보자
+        // document.write("안녕하세요", "<br>");
+        // document.write("안녕하세요", "<br>");
+        // document.write("안녕하세요", "<br>");
+        // document.write("안녕하세요", "<br>");
+        // document.write("안녕하세요", "<br>");
+        // document.write("안녕하세요", "<br>");
+        // document.write("안녕하세요", "<br>");
+        // document.write("안녕하세요", "<br>");
+        // document.write("안녕하세요", "<br>");
+        // document.write("안녕하세요", "<br>");
+        // var i = 1; //변수명은 보통 의미를 알 수 있게끔 길게 사용하는 것을 추천, 하지만 반복문의 변수는 반복 횟수만을 적기 때문에 짧게 적기도 함
+        // var total = null; //반복문을 통해 i가 변경되는 값을 대입
+        // while (i <= 1000){
+        //     document.write(i, "<br>");
+        //     total += i
+        //     //total 에 i를 계속 더하는 구조
+        //     i++; //중요! 빼먹을 경우 무한 반복
+        // }
+        // document.write("1~100의 합 : "+total, "<br>");
+        //1부터 30까지의 수중 2의 배수 이면서(and) 6의 배수인 숫자만을 출력하는 예제
+        var i = 1;
+        // var end_number = 30;
+        while (i <=30){
+            if( i % 2 == 0 && i % 6 == 0){
+                document.write(i, "<br>");
+            }
+            i++;
+        }
+    </script>
+</body>
+</html>
