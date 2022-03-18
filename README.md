@@ -10,3 +10,4 @@
 
 # mission
 - p.58 mission 1,2
+- p.84~p.85 mission
