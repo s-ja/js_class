@@ -79,9 +79,9 @@ a, a:link{
     display: block;
     clear: both;
 }
-.banner_form .banner{
+.banner{
     /* float: left; */
-    width: 40%;
+    width: 50%;
 }
 .banner img{
     max-width: 100%;
@@ -91,6 +91,7 @@ a, a:link{
     box-sizing: border-box;
     padding: 0 0 0 5%;
     align-items: center;
+    /* float: right; */
     /* border: 1px solid #999; */
 }
 .form label{
@@ -100,7 +101,7 @@ a, a:link{
 .user_input{
     width: calc(100% - 110px);
     padding: 10px 0;
-    text-indent: 1rem;
+    text-indent: 10px;
 }
 .form li{
     margin: 10px 0;
