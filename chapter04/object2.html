@@ -27,7 +27,7 @@
 
         // var tv = []; // 배열
         // var tv = new Object(); // 객체선언 - 생성자
-        tv.model; // tv 모델 속성 (key) --> "hanul"이 출력
+        //tv.model; // tv 모델 속성 (key) --> "hanul"이 출력
         var tv = {
             model: "hanul",
             color: "black",
@@ -47,6 +47,7 @@
         }; //객체선언 - 리터럴
 
         // 객체 메소드 실행 (=호출)
+        tv.model = "24md4ka";
         tv.info(); //tv 객체에 있는 info라는 함수를 실행해라.
         document.write("우리집 tv의 모델은 "+tv.model+"입니다.", "<br>");
     </script>
