@@ -33,7 +33,7 @@
             color: "black",
             price: 1000000,
             info: function(){ //객체 내부의 function (메소드)
-                write("모델명 : "+this.model+"색상 : "+this.color+"가격 : "+this.price)
+                document.write("모델명 : "+this.model+"색상 : "+this.color+"가격 : "+this.price)
             },
             power_off: function(){
                 document.write("전원이 3초 뒤에 꺼집니다.", "<br>");
@@ -42,6 +42,8 @@
                 var choice = confirm("셋탑박스를 켤까요?");
                 if (choice){
                     document.write("셋탑박스를 켰습니다.", "<br>");
+                }else{
+                    document.write("그대로 종료합니다.", "<br>");
                 }
             }
         }; //객체선언 - 리터럴
@@ -50,6 +52,8 @@
         tv.model = "24md4ka";
         tv.info(); //tv 객체에 있는 info라는 함수를 실행해라.
         document.write("우리집 tv의 모델은 "+tv.model+"입니다.", "<br>");
+        tv.power_off();
+        tv.power_on();
     </script>
 </body>
 </html>
