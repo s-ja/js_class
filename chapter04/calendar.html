@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>caledar</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            font: 16px/1.5 "Noto Sans KR", sans-serif;
+            background: url('https://cdn.pixabay.com/photo/2016/11/29/09/16/architecture-1868667_960_720.jpg') no-repeat center / cover;
+        }
+        h1{
+            color: aliceblue;
+            text-align: center;
+            margin: 3rem 0 0 0;
+            font-size: 3rem;
+            text-transform: uppercase;
+            font-weight: bolder;
+        }
+        .text_shadow{
+            text-shadow: 0 0 5px white rgba(0, 0, .5);
+        }
+        #calendar_text{
+            text-align: center;
+            color: aliceblue;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text_shadow">clock</h1>
+    <div id="calendar_text" class="text_shadow">년월일</div>
+    <script>
+        var current_date = new Date();
+        console.log(current_date);
+        var current_year = current_date.getFullYear();
+        var current_month = current_date.getMonth()+1;
+        var current_date = current_date.getDate();
+        // console.log("현재 월 : "+current_date.getMonth()+1);
+        // console.log("현재 일 : "+current_date.getDay());
+        // 출력할 곳
+        // document.getElementById("calendar_text")
+        var date_out =  document.querySelector("#calendar_text")
+        // console.dir(date_out);
+        // setTimeout(write_date,3000);
+        date_out.innerText = `${current_year} - ${current_month} - ${current_date}`
+    </script>
+</body>
+</html>

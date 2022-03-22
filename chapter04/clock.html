@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 &gt; 날짜 객체</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            font: 16px/1.5 "Noto Sans KR", "Maven Pro";
+            background: url("https://cdn.pixabay.com/photo/2017/03/29/15/18/tianjin-2185510_960_720.jpg") no-repeat center / cover;
+        }
+        h1, h2, #timer_text{
+            text-align: center;
+            color: aliceblue;
+            text-shadow: 5px 5px 5px rgba(0,0,0,.4);
+        }
+        h1{
+            margin: 5rem 0 1rem 0;
+            font-size: 3rem;
+        }
+        h2{
+            margin: 3rem 0 2rem 0;
+            font-size: 2rem;
+        }
+        #itmer_text{
+            font-size: 1.25rem;
+            padding: 1rem 1.25rem;
+            border: 1px solid wheat;
+            border-radius: 30px;
+        }
+        .timer_wrap{
+            display: flex;
+            justify-content: center;
+        }
+        hr{
+            width: 60%;
+            margin: 0 auto;
+            height: 1px;
+            background: wheat;
+            border: 0;
+        }
+        .alarm_wrap{
+            width: 40%;
+            margin: 0 auto;
+        }
+        .alarm_wrap input[type=text]{
+            padding: 1rem 0;
+            text-indent: 1rem;
+            margin: 1rem;
+            width: 100%;
+        }
+        #set_alarm{
+            background: slategray;
+            color: aliceblue;
+            padding: 1rem 1.25rem;
+            margin: 1rem;
+            float: right;
+            border-style: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1> 시간, 날짜 정보 출력</h1>
+    <h2>시계 만들기</h2>
+    <div class="timer_wrap">
+        <div id="timer_text">시 : 분 : 초</div>
+    </div>
+    <hr>
+    <form id="alarm_form">
+        <ul class="alarm_wrap">
+            <li>
+                <label for="alarm_hour">시</label>
+                <input type="text" id="alarm_hour" maxlength="2" placeholder="알람설정 시간을 입력하세요">
+            </li>
+            <li>
+                <label for="alarm_min">분</label>
+                <input type="text" id="alarm_min" maxlength="2" placeholder="알람설정 분 을 입력하세요">
+            </li>
+            <li>
+                <input type="submit" id="set_alarm" value="설정">
+            </li>
+        </ul>
+    </form>
+    <script>
+        var my_date = new Date();
+        var my_hour = my_date.getHours();
+        var my_min = my_date.getMinutes();
+        var my_sec = my_date.getSeconds();
+        var my_mili_sec = my_date.getMilliseconds();
+
+        //출력대상 탐색
+        // document.getElementById("timer_text")
+        // document.querySelector("#timer_text").innerHTML = ""
+        // document.querySelector("#timer_text")
+        var target_tag = document.querySelector("#timer_text")
+        target_tag.innerHTML = `${my_hour}:${my_min}:${my_sec},${my_mili_sec}`
+
+        //알람을 설정하려면??
+        // if(내가 원하는 시간 == my_hour){
+        //     if(내가 원하는 분 == my_min){
+        //         //알람 팝업을 보여준다.
+        //         //
+        //     }
+        // }
+        
+        // .setTimeout() : 지정시간이 종료되면~
+        // .setInterval() : 매 지정 시간마다 (반복)~
+    </script>
+</body>
+</html>

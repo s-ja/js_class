@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 &gt; 내장객체</title>
+</head>
+<body>
+    <h1>내장객체 p.90</h1>
+    <p>내장객체란, 브라우저의 자바스크립트 엔진에 내장되어(built-in)
+        필요한 경우 객체를 생성해서 사용할 수 있다.
+    </p>
+    <script>
+        // 예) 사용자가 객체 정의
+        // I. 객체정의 문법
+        var tv = new Object();
+        // 키(key), 값(value) : property
+        tv.model = "smart tv"
+        tv.price = 1000000
+        tv.inch = 100
+        // 메소드 정의
+        tv.info = function(){ //익명함수 : 함수의 이름이 없어, 변수나 키 값으로 참조
+            console.log(`모델명 : ${this.model}`);
+        }
+        tv.info();
+        
+        // II.객체정의 문법 // 리터럴 방식 : {..}:객체, [..]:
+        // var tv2 = { 
+        //     model : "smart tv",
+        //     price : 1000000,
+        //     inch : 100,
+        //     info : function(){ //익명함수 : 함수의 이름이 없어, 변수나 키 값으로 참조
+        //         console.log(`모델명 : ${this.model}`);
+        //     }
+        // }
+    </script>
+</body>
+</html>

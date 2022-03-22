@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 &gt; 추가설명</title>
+</head>
+<body>
+    <script>
+        //객체 : 자바스크립트의 자료형 중 하나
+        // 객체 선언법(1)
+        //p.90 생성자를 이용한 객체생성 방식
+        // var tv_name = "qled 5300"
+        // var tv_price = 1000000
+
+        // var tv = new Object(); // 생성자 방식
+        // // 프로퍼티 (키 = 값)
+        // tv.model = "LED freesync";
+        // tv.price = 1000000;
+        // tv.discount = 5;
+        // tv.manufactor = "samsung";
+        // tv.info = function(){ // 메소드
+        //     console.log(`모델명 : ${this.model}, 가격: ${this.price}`);
+        // }
+        // tv.info();
+        // var num = new Number()
+
+        //리터럴 방식으로 객체 생성 (p.91)
+        // var car = {
+        //     type:'coupe',
+        //     wheel: 21,
+        //     made : 'german',
+        //     price : 10000000000,
+        //     info: function(){
+        //         console.log("가격 : "+this.price+", 제조국 : "+this.made);
+        //     }
+        // }
+        // car.info();
+
+        
+        // var arr1 = ["사당","교대","강남","방배"];
+        // var arr2 = new Array();
+        // arr2[0]="충장로";
+        // arr2[1]="녹동";
+        // arr2[2]="소태";
+
+        // p.91 내장객체 > 날짜 객체
+        //  I . 생성자 vs II. 리터럴(=문자열)
+        var my_date = new Date();
+        console.log(my_date);
+
+        // 객체는 1)프로퍼티 2)메소드
+        // 접근기호 : 1) 객체명.프로퍼티 or 객체명.메소드();
+        //           2)객체명 ["프로퍼티 이름"]
+        console.log(my_date.getDate()); // get day of the month 요일정보 추출
+        var now_month = my_date.getMonth()+1;
+        console.log("현재 지금은 "+now_month+"월 입니다."); //월 정보
+        console.log(`지금은 ${my_date.getMonth()+1}월 입니다.`); //월 정보
+    </script>
+</body>
+</html>
