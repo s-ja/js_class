@@ -46,10 +46,11 @@
         
         console.log("vip : "+vip.name); // mr.park
         console.log("vip age : "+vip.age);
-        console.log("vip nick name : "+vip["nick name"]);
+        console.log("vip nickname : "+vip["nick name"]);
         console.log("guest : "+guest.name); // mr.park
         console.log("guest name : "+guest.name); 
         console.log("guest age : "+guest.age);
+        console.log("guest nickname : "+guest["nick name"]);
         // 값이 있는 주소 (reference)가 복사되었기 때문에..., 직접적인 값의 복사와 객체의 복사.
         //아래와 같음
         // var vip = {
@@ -58,12 +59,12 @@
             // }
     for (var key in vip){
         // console.log(key +" : "+vip[key]);
-    console.log(`${key}:${vip[key]}`); // 백틱(`) 달러와 컬리브레이스 사이의 
-    // 템플릿 문법 template syntax
+        console.log(`${key}:${vip[key]}`); // 백틱(`) 달러와 컬리브레이스 사이의 변수 이름(?)
+        // 템플릿 문법 template syntax
     }
             
 
-    for (var item in vip){
+    for (var item in guest){
         console.log(guest[item]);
     }
     </script>
