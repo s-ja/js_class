@@ -13,6 +13,7 @@ a, a:link{
 .d_none{
     display: none;
 }
+/* ============header============== */
 .header_top{
     border-bottom: 1px solid white;
     padding: 10px 0;
@@ -36,45 +37,53 @@ a, a:link{
     width: 400px;
     height: 300px;
     position: absolute;
-    left: 80%;
+    left: 60%;
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 100;
-    /* background: gold; */
 }
 article h3, article p{
     color: antiquewhite;
     text-shadow: 3px 3px 10px ;
 }
 article h3{
-    font-size: 2rem;
+    font-size: 2.5rem;
     letter-spacing: -1px;
+    font-weight: bolder;
+    /* float: right; */
+    text-align: right;
 }
 article p{
     margin: 1rem 0;
+    font-style: italic;
+    /* float: right; */
+    text-align: right;
 }
 #calculate{
     background: slategray;
     color: aliceblue;
     padding: .5rem 1.25rem;
-    border-radius: 10px;
+    border-radius: .75rem;
     border: 0;
+    float: right;
 }
+/* ============dday form============== */
 .form_list li{
     display: flex;
+    align-items: center;
     margin: 0 0 1rem 0;
 }
 .form_list li label{
-    display: block;
     color: antiquewhite;
+    display: block;
     flex: 1;
 }
-.form_list{
-    display: block;
-    width: 100px;
-}
-.form_list input{
+.form_list li input{
     flex: 9;
+}
+.form_list li input::placeholder{
+    color: azure;
+    font-style: italic;
 }
 #user_year, #user_month, #user_day{
     text-indent: 1rem;
@@ -83,7 +92,7 @@ article p{
     background: none;
     border: 1px solid whitesmoke;
 }
-#dday_submit{
+#dday_calc{
     background: darkcyan;
     color: aliceblue;
     padding: .5rem 1rem;
@@ -91,7 +100,7 @@ article p{
     border-radius: 10px;
     flex: 120px;
 }
-#dday_calc{
+#dday_reset{
     background: aliceblue;
     color: darkcyan;
     padding: .5rem 1rem;
