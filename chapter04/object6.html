@@ -27,6 +27,12 @@
        var user_month = Number(prompt("알고 싶은 월은?", "예)6월 -> 6"));
        var user_date = Number(prompt("알고 싶은 일은?", "예)24일 -> 24"));
        var today = new Date();
+       var now_hour = today.getHours();
+       now_min = today.getMinutes();
+       now_sec = today.getSeconds();
+
+       console.log(today);
+       
     //    var today = new Date();
     //    var now_year = today.getFullYear();
        //prompt 통해서 원하는 날짜 물어볼 수 있음. : string --> Number() 로 감싸서 변환
