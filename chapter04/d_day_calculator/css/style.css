@@ -37,7 +37,7 @@ a, a:link{
     width: 400px;
     height: 300px;
     position: absolute;
-    left: 60%;
+    left: 70%;
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 100;
@@ -110,4 +110,5 @@ article p{
 }
 .form_list li:nth-last-child(1){
     justify-content: center;
+    column-gap: 20px;
 }
