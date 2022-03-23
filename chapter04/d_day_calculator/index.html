@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/04c1ea1f1c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header_top">
+            <div class="top_wrap">
+                <h1>d_day_calculator</h1>
+                <ul class="top_links">
+                    <li><a href="#"><i class="fa-solid fa-house"></i> home</a></li>
+                    <li><a href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i> join</a></li>
+                    <li><a href="#"><i class="fa-solid fa-sitemap"></i> sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+   <section id="main">
+       <div class="article_wrap">
+           <article>
+               <h3>시간은 금이다</h3>
+               <p>시간은 기다려 주지 않는다.</p>
+               <button id="calculate">계산하기 <i class="fa-solid fa-arrow-right"></i></button>
+           </article>
+           <article  class="d_none">
+               <form action="" id="dday_form" autocomplete="off">
+                   <ul class="form_list">
+                       <li>
+                           <label for="user_year">년도</label>
+                           <input type="text" id="user_year" maxlength="4" placeholder="년도를 입력하세요, 입력하지 않으면 현재 년도를 기준으로 합니다.">
+                       </li>
+                       <li>
+                           <label for="user_month">월</label>
+                           <input type="text" id="user_month" maxlength="2" placeholder="월을 입력하세요" required>
+                       </li>
+                       <li>
+                           <label for="user_day">일</label>
+                           <input type="text" id="user_day" maxlength="2" placeholder="일을 입력하세요" required>
+                       </li>
+                       <li>
+                            <input type="submit" id= "dday_calc" value="계산하기">
+                            <input type="reset" id= "dday_reset" value="초기화">
+                       </li>
+                   </ul>
+               </form>
+           </article>
+       </div>
+   </section>
+    <script src="script/main.js"></script>
+</body>
+</html>
