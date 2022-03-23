@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장객체 &gt; 날짜객체</title>
+</head>
+<body>
+    <h1>특정 날짜 date 객체를 이용해 설정, 관련 정보 추출</h1>
+    <p>2002 년 월드컵 날짜와 관련된 정보를 출력하는 예제</p>
+    <script>
+        //p.93
+        var today = new Date();
+        // console.log(today);
+        var now_month = today.getMonth(),
+        now_date = today.getDate(),
+        now_day = today.getDay();
+        // day_name;
+       /* switch(now_day) {
+                case 0 :day_name = "일"
+                break;
+                case 1 :day_name = "월"
+                break;
+                case 2 :day_name = "화"
+                break;
+                case 3 :day_name = "수"
+                break;
+                case 4 :day_name = "목"
+                break;
+                case 5 :day_name = "금"
+                break;
+                case 6 :day_name = "토"
+                break;
+                default : alert("일시적인 오류가 발생했습니다.\n")
+        } */
+        // 배열 객체를 이용해서 요일정보, 3 --> 수 요일로 출력하시오.
+        /*var day_name = [
+            "일","월","화","수","목","금","토",
+        ] */
+       if(now_day == 0){
+            now_day = "일";
+        }else if (now_day == 1){
+            now_day = "월";
+        }else if (now_day == 2){
+            now_day = "화";
+        }
+        else if (now_day == 3){
+            now_day = "수";
+        }
+        else if (now_day == 4){
+            now_day = "목";
+        }
+        else if (now_day == 5){
+            now_day = "금";
+        }
+        else{
+            now_day = "토";
+        }
+        document.write(`오늘은 ${now_month}월, ${now_date}일, ${now_day}요일 입니다.<br>`);
+        var worldcup = new Date(2002,4,31,9,15,27)
+        // console.log(worldcup);
+        var the_month = worldcup.getMonth(),
+        the_date = worldcup.getDate(),
+        the_day = worldcup.getDay();
+        document.write(`그날은 ${the_month + 1}월, ${the_date}일, ${the_day}요일 입니다.`);
+
+    </script>
+</body>
+</html>
