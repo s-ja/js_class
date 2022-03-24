@@ -33,7 +33,7 @@ a, a:link{
     font-size: 14px;
     /* text-transform: uppercase; */
 }
-.article_wrap{
+.article_wrap, #result_pop{
     width: 400px;
     height: 300px;
     position: absolute;
@@ -41,6 +41,24 @@ a, a:link{
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 100;
+}
+#result_pop{
+    /* z-index: 1000 !important; */
+    z-index: 1000 !important;
+    background: whitesmoke;
+    border-radius: 1rem;
+    text-align: center;
+    color: black;
+}
+#result_pop h1{
+    /* color: black; */
+    font-weight: bolder;
+    font-size: 2rem;
+    margin: 2rem 0;
+}
+#d_day{
+    color: red;
+    font-weight: bolder;
 }
 article h3, article p{
     color: antiquewhite;
@@ -113,4 +131,47 @@ article p{
 .form_list li:nth-last-child(1){
     justify-content: center;
     column-gap: 20px;
+}
+
+/* ============미디어쿼리============== */
+@media screen and (max-width : 480px){
+    .top_wrap{
+        max-width: 100%;
+        padding: 0 1rem;
+        /* justify-content: space-around; */
+        align-items: center;
+    }
+    .top_wrap h1{
+        font-size: 1.5rem;
+    }
+    #burger{
+        display: inline-block;
+    }
+    .top_links{
+        display: none;
+    }
+    .article_wrap{
+        left: 50%;
+    }
+}
+@media screen and (max-width : 425px){
+    .article_wrap{
+        width: auto;
+        max-width: 93.75%;
+        left: 50%;
+    }
+}
+@media screen and (max-width : 320px){
+    .article_wrap{
+        width: auto;
+        max-width: 93.75%;
+        left: 50%;
+    }
+}
+@media screen and (max-width : 375px){
+    .article_wrap{
+        width: auto;
+        max-width: 93.75%;
+        left: 50%;
+    }
 }
