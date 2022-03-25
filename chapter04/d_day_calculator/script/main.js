@@ -11,11 +11,11 @@ function change_scene(e){
 
 // var calc_btn = document.querySelector("#dday_calc");
 // var calc_btn = document.querySelector("#dday_reset");
-var dday_Form = document.querySelector("#dday_form")
+var dday_form = document.querySelector("#dday_form")
 
-var reset_btn = dday_Form.querySelector("#dday_reset");
+var reset_btn = dday_form.querySelector("#dday_reset");
 
-dday_Form.addEventListener("submit", dday_calc);
+dday_form.addEventListener("submit", dday_calc);
 
 function dday_calc(e){
     e.preventDefault();
