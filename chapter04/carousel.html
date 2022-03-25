@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carousel : 캐러셀</title>
+</head>
+<body>
+    <h1>p.141 ~ 142 함수정의문을 이용한 캐러셀</h1>
+    <h2>또는 이미지 갤러리, 슬라이드 만들기</h2>
+<div class="gallary_body">
+        <button id="prev">이전</button>
+        <div class="gallary">
+            <img src="https://picsum.photos/600/300" alt="placeholder">
+            <div id="count">1/8</div>
+        </div>
+        <button id="next">다음</button>
+</div>
+    <script>
+        // 사진 8개 <--가짜 사진으로 대체
+        // 이전 버튼 : 이전 사진으로
+        // 다음 버튼 : 다음 사진으로 변경
+        // 버튼을 누르면 실행할 코드 덩어리 : 함수
+        // 사진으로 이전, 다음으로 바꾸는 코드 덩어리 : 함수
+
+        var num = 0;
+        var gallary = document.querySelector("#gallary");
+        var img_tag = document.querySelector("img");
+
+        var img_url = [
+            "https://picsum.photos/id/1/600/300",
+            "https://picsum.photos/id/2/600/300",
+            "https://picsum.photos/id/3/600/300",
+            "https://picsum.photos/id/4/600/300",
+            "https://picsum.photos/id/5/600/300",
+            "https://picsum.photos/id/6/600/300",
+            "https://picsum.photos/id/7/600/300",
+            "https://picsum.photos/id/8/600/300"
+        ]
+        var prev_btn = document.querySelector("#prev");
+        var next_btn = document.querySelector("#next");
+
+        var img_count = document.querySelector("#count");
+
+        prev_btn.addEventListener("click",prev_img)
+        next_btn.addEventListener("click",next_img)
+
+        img_init();
+
+        function img_init(){
+            set_img(0);
+        }
+
+        function prev_img(){
+            num--;
+            if(num == 0) num =7;
+            set_img(num);
+            set_count(num);
+            console.log(num);
+        }
+        function next_img(){
+            num++;
+            if(num == 7) num = 0;
+            set_img(num);
+            set_count(num);
+            console.log(num);
+        }
+        function set_img(index){
+            img_tag.setAttribute("src",img_url[index])
+        }
+
+        function set_count(num){
+            img_count.innerText = `${num+1} / 8`
+        }
+
+        
+        // function gallary(direct){
+        //     if(direct){
+        //         if(num == 7) return;
+        //         num++;
+        //     }else{
+        //         if(num == 0) return;
+        //         num--;
+        //     }
+        //     // img_tag.setAttribute("src","images/img"+num+".jpg");
+        //     img_tag.setAttribute("src",img_url[num]);
+        // }
+    </script>
+</body>
+</html>

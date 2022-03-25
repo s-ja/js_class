@@ -41,11 +41,54 @@
         var power_num = Math.pow(3,2);
         console.log("pow메소드 실행값 : "+power_num);
 
+        // 로또 번호 생성기 (랜덤 난수)
+        // 0~9까지 난수를 생성
         // var ran_num = parseInt(Math.random() * 10);
-        var ran_num = Math.floor(Math.random() * 11);
+        // var ran_num = Math.floor(Math.random() * 11);
         // console.log(parseInt(ran_num));
-        console.log(ran_num);
+        // p.97 120~150 까지의 난수를 생성
+        
+        var ran_num1 = parseInt(Math.random() * 31);
+        var ran_num2 = parseInt(Math.random() * 31)+120;
+        console.log(ran_num1, ran_num2);
 
+        // p.97 코딩해보세요
+        // 웹사이트 방문시 창에 방문자가 가위,바위,보 하나를 입력하면 컴퓨터가 랜덤으로 내려는 가위, 바위, 보 와 일치했을때
+        // 맞추는 게임 (컴퓨터가 무엇을 낼지 예측하는 게임)
+
+        // Math.random()
+        document.write("<h1>컴퓨터 가위,바위, 보 맞추기</h1>");
+
+        var game = prompt("가위, 바위, 보 중 하나를 (한글로)입력하세요");
+        // if(game == "가위" || game.toLocaleLowerCase() == "scissors")
+        var game_num;
+        // swith (game){
+        //     case "가위": game_num = 1;
+        //     break;
+        //     case "바위" : game_num = 2;
+        //     break;
+        //     case "보" : game_num = 3;
+        //     break;
+        //     default : alert("가위, 바위, 보 중 하나만 입력하세요.");
+        //     location.reload();
+        // }
+        switch(game){
+            case "가위": game_num =1; break;
+            case "바위": game_num =2; break;
+            case "보": game_num =3; break;
+            default: alert("가위,바위,보 중 하나만 입력하세요.");
+            location.reload();
+        }
+        var com = Math.ceil(Math.random()*3);
+        console.log("컴퓨터의 난수값: "+com);
+        // document.write("<img src=images/mat가위h_img_"+com+".jpg alt= />");
+        document.write(`<img src=images/math_img_${com}.jpg alt= />`);
+        document.write(`<img src=images/math_img_${game_num}.jpg alt= />`);
+        if(game_num == com){
+            document.write(`<img src=images/game_1.jpg alt= />`);
+        }else{
+            document.write(`<img src=images/game_2.jpg alt= />`);
+        }
     </script>
 </body>
 </html>

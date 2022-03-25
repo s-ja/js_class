@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또번호 생성기</title>
+</head>
+<body>
+    <h1>배경색상 바꾸기</h1>
+    <button>변경</button>
+    <h1>로또번호 생성기</h1>
+    <p>1부터 45 까지의 랜덤 변수를 6번 생성</p>
+    <p>로또 번호를 생성하여 보여주는 페이지</p>
+    <button id="gen_5">생성하기 X5</button>
+    <button id="gen_1">생성하기 X1</button>
+
+    <script>
+        // //p.131 함수
+        // // 변수 vs 함수 : 데이터를 저장한 공간 vs 코드를 저장한 공간
+        // // 1개의 데이터 vs 여러줄의 코드
+        // //  var vs function : 선언 키워드
+        
+        // // 객체 내부에 정의된 함수 : 메소드();
+        // // 객체 내부에 정의된 변수 : 프로퍼티 (클래스 - 멤버변수)
+
+        // // 함수 정의법 - 가장 일반적인 방식
+        // function log(){
+        //     console.log("할일을 적어둠");
+        // }
+        // // 함수 실행
+        // log();
+        
+        // // log2(); 아래 있던것을 위로 올리면 실행 안됨, 선언 전
+        // // 호이스팅 때문, 일반적인 함수정의는 호이스팅에 의해서 어디서든 호출 가능, 익명함수는 반드시 정의 뒤에 호출해야 함
+
+        // // 함수 정의법 - 익명 함수 (함수의 이름이 없음 --> 참조변수)
+        // var log2 = function(){
+        //     console.log("로그를 출력합니다.");
+        // }
+        // log2();
+
+        // // p.133 코딩해보세요
+        // var count = 0; // 카운트 -> 숫자를 셈 (방문횟수)
+        // my_fnc();
+        
+        // function my_fnc(){
+        //     count++;
+        //     document.write(`<p>hello, ${count}</p>`);
+        // }
+        // var the_fnc = function(){
+        //     count++;
+        //     document.write(`<p>bye, ${count}</p>`);
+        // }
+        // the_fnc();
+        // the_fnc();
+
+        // p.134 코딩해보세요 배경색 바꾸기
+        // 함수 정의문 + 클릭시마다 배경색이 바뀌게
+        var colors = ["white","purple","green","aqua"];
+        var body_tag = document.querySelector("body");
+        var change_btn = document.querySelector("button")
+        // var i =0;
+        
+        change_btn.addEventListener("click",change_color)
+        //.console.dir(객체)를 통해 속성값들을 확인할 수 있음
+
+        function change_color(){
+            // i++; // 0을 1로 바꿈
+            // if(i >= colors.length) i = 0;
+            // body_tag.style.backgroundColor = colors[i];
+            body_tag.style.backgroundColor = colors[Math.ceil(Math.random()*3)];
+            console.log(body_tag.style.backgroundColor);
+        }
+
+        // p.135 매개변수가 있는 함수 정의문
+        function plus(매개변수1,매개변수2,매개변수3){
+            // var result = 매개변수1+매개변수2
+            // console.log(`두수의 합 ${result}가 입력되었습니다.`);
+            return 매개변수1 + 매개변수2 + 매개변수3
+        }
+        // var plus_result =  plus(4,5);
+        var result =  plus(4,5);
+        document.write("두수의 합"+result, "<br>");
+
+        function multiplication(x,y){
+            return x*y;
+        }
+        
+        function plus2(){
+            var sum = 0;
+            for (var i=0; i<arguments.length; i++){
+                sum += arguments[i];
+            }
+            return sum;
+        }
+        var result = plus2 (1,4,23,5,5,4,6,6,4,76);
+        document.write("막 입력한 어떤 수들의 합 : "+result, "<br>");
+        </script>
+    
+    <script>
+        var make_5btn = document.querySelector("#gen_5");
+        var make_1btn = document.querySelector("#gen_1");
+        
+        make_5btn.addEventListener("click",make_x5);
+        make_1btn.addEventListener("click",make_x1);
+
+        var lotto_array=[];
+
+       function make_x1(){
+            // var lotto_num, lotto_array =[]; 
+            for(var i =0; i<6; i++){
+                lotto_array[i] =Math.ceil(Math.random()*45);
+                // console.log(lotto_num);
+            }
+            console.log("=====end======");
+            console.log(lotto_array);
+       }
+       function make_x5(){
+            // var lotto_num, lotto_array =[]; 
+            for(var i =0; i<6; i++){
+                for(var j=0; j<i; j++){
+                    lotto_array[i][j] =Math.ceil(Math.random()*45);
+                }
+            }
+            console.log("=====end======");
+            console.log(lotto_array);
+       }
+    </script>
+</body>
+</html>
