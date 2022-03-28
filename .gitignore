@@ -4,3 +4,4 @@ figma_sketch/
 # push 안할 파일의 목록
 *.psd
 *.fig
+node_modules
