@@ -9,7 +9,9 @@
 <body>
     <h1>mission2 test score 생성자 함수</h1>
     <p>kimgun ,ohgun </p>
-    <!-- <button>배경색 바꾸기</button> -->
+    <p>kimgun, ohgun 의 객체를 생성</p>
+    <p>속성으로 이름, 국어점수, 영어점수를 등록</p>
+    <p>get_test_info(),get_avg()를 등록</p>
     <script>
     //   생성자 함수는 대문자로 시작함
     // 반드시 new 키워드를 사용할 것
@@ -26,6 +28,10 @@
             }
         }
         var kimgun = new Test_score("김군",100,90);
+        document.write(kimgun.get_info(), "<br>");
+        document.write(kimgun.get_avg(), "<br>");
+
+        var kimgun = new Test_score("오군",80,90);
         document.write(kimgun.get_info(), "<br>");
         document.write(kimgun.get_avg(), "<br>");
     </script>
