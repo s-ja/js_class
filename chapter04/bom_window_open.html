@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 &gt; 브라우저 객체</title>
+</head>
+<body>
+    <h1>bom</h1>
+    <p>브라우저 객체 모델 중 최상위 객체 window에 정의된 메소드를 살펴봄</p>
+    <h2>window 객체 메소드</h2>
+    <ul>
+        <li>.open() vs close() : URL 페이지를 새 창으로 띄웁니다.
+        <p class="warn"> 단, 사용자가 팝업차단을 해줘야 함</p>
+        </li>
+        <li>
+            setInterval() vs clearInterval() : 일정한 간격으로 코드 실행하기 vs 해제하기
+            <p class="warn"> 단, 참조변수는 보통 intervalID 라고 씀.</p>
+        </li>
+    </ul>
+
+    <h2>사용예시</h2>
+    <div class="window">
+        버튼을 눌러 팝업창을 열어보세요.
+        <button id="opener">새창열기 (=팝업)</button>
+    </div>
+    <div class="timer">
+        <button id="stopper">멈춤</button>
+    </div>
+    <script>
+        const window_box = window.document.querySelector(".window");
+        const open_btn = window_box.querySelector("#opener");
+
+        // 이벤트 리스너 방식 : 여러개의 이벤트를 부착 .addEventListener()
+        // 이벤트 리스너 방식의 이벤트 제거 : .removeEventListner()
+        // 이벤트 핸들러 방식 : 한번에 한개의 이벤트를 부착
+        
+        open_btn.onclick=function(){
+            // console.log("화면 폭 : "+screen.availWidth / 2);
+            const pop_width = 500;
+            const pop_height = 300;
+            const left_pos = (screen.availWidth - pop_width) /2 ;
+            const top_pos = (screen.availHeight  - pop_height)/2 ;
+            // console.log(left_pos, top_pos);
+            window.open("clock.html","clock_pop","width="+pop_width+",height="+pop_height+",left=300,top=200,location=no,status=no,toolbars=no")
+        }
+
+        // 이벤트 핸들러 방식의 이벤트 제거
+        // open_btn = null;
+        
+        // p.119 예시 3초 간격으로 변수 i 값을 1씩 증가시킴
+        let i = 0
+        const timer = document.querySelector("#timer");
+        const intervalID = setInterval(function(){
+            i++
+            // document.write(i, "<br>");
+            timer.innerHTML = `i : ${i}+<br>`;
+        }, 3000);
+        // setInterval(function(){
+        //     i++
+        //     // document.write(i, "<br>");
+        //     timer.innerHTML = `i : ${i}+<br>`;
+        // }, 3000);
+
+        const stopper = document.querySelector("#stopper")
+        stopper.addEventListener("click",function(){
+            clearInterval(intervalID);
+        })
+    </script>
+    
+</body>
+</html>

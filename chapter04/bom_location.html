@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 &gt; location</title>
+</head>
+<body>
+    <h1>location 객체</h1>
+    <p>브라우저에 대한 정보를 관리하는 객체</p>
+    <form id="form">
+        <label for="url_field">이동할 주소</label>
+        <input type="url" id="url_field">
+        <input type="submit" value="입력">
+    </form>
+    <script>
+        // alert(location.href);
+        // Q.입력 필드에 입력한 주소를 location.href 에 넣어보세요.
+
+        const form = document.querySelector("#form");
+        const url = document.querySelector("#url_field");
+        url.focus();
+        form.addEventListener("submit",handle_form);
+
+        function handle_form(e){
+            e.preventDefault();
+            // console.dir(e)
+            // if(url.value == ""){
+            //     alert("이동할 주소를 입력하세요.")
+            // }
+            form_validation();
+            // location.href = url.value;
+            const is_new_tab = confirm("새 창으로 열까요?")
+            if(is_new_tab){
+                window.open(url.value, "")
+            }else{
+                location.href = url.value;
+            }
+        }
+        function form_validation(){
+            if(url.value == ""){
+                alert("이동할 주소를 입력하세요.")
+                return false;
+            }
+            if(url.value.indexOf("http://")){
+                alert("http:// 를 포함해서 작성하세요")
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

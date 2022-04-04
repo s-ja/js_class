@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 &gt; BOM</title>
+</head>
+<body>
+    <h1>navigator 객체</h1>
+    <p>브라우저 운영체제의 정보를 알려주는 객체</p>
+    <div id="infos">
+
+    </div>
+    <script>
+        // p.127 방문자의 운영체제 정보를 출력하는 예제
+
+        // alert(navigator)
+        // console.dir(navigator)
+        // alert(navigator.userAgent)
+        const infos = document.querySelector("#infos");
+        const info = navigator.userAgent.toLowerCase();
+        let os_img = null;
+
+        if(info.indexOf("windows") >= 0){
+            os_img = "window.png"
+        }else if(info.indexOf("macintosh") >= 0){
+            os_img = "macintosh.png"
+        }else if(info.indexOf("iphone") >= 0){
+            os_img = "iphone.png"
+        }else if(info.indexOf("android") >= 0){
+            os_img = "android.png"
+        }else{
+            os_img = "etc.png"
+        }
+
+        infos.innerHTML = `<img src="images/${os_img}", alt="">`
+    </script>
+</body>
+</html>

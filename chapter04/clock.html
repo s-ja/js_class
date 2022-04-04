@@ -82,32 +82,55 @@
         <ul class="alarm_wrap">
             <li>
                 <label for="alarm_hour">시</label>
-                <input type="text" id="alarm_hour" maxlength="2" placeholder="알람설정 시간을 입력하세요">
+                <input type="text" id="alarm_hour" required maxlength="2" placeholder="알람설정 시간을 입력하세요">
             </li>
             <li>
                 <label for="alarm_min">분</label>
-                <input type="text" id="alarm_min" maxlength="2" placeholder="알람설정 분 을 입력하세요">
+                <input type="text" id="alarm_min" required maxlength="2" placeholder="알람설정 분을 입력하세요">
+            </li>
+            <li>
+                <label for="alarm_message">메시지</label>
+                <input type="text" id="alarm_message" placeholder="간단한 메모를 남겨보세요.">
             </li>
             <li>
                 <input type="submit" id="set_alarm" value="설정">
             </li>
         </ul>
     </form>
+    <button id="close_pop">창 닫기</button>
     <script>
-        var my_date = new Date();
-        var my_hour = my_date.getHours();
-        var my_min = my_date.getMinutes();
-        var my_sec = my_date.getSeconds();
-        var my_mili_sec = my_date.getMilliseconds();
+        // let my_date = new Date();
+        // let my_hour = my_date.getHours();
+        // let my_min = my_date.getMinutes();
+        // let my_sec = my_date.getSeconds();
+        // let my_mili_sec = my_date.getMilliseconds();
 
         //출력대상 탐색
         // document.getElementById("timer_text")
         // document.querySelector("#timer_text").innerHTML = ""
         // document.querySelector("#timer_text")
-        var target_tag = document.querySelector("#timer_text")
-        target_tag.innerHTML = `${my_hour}:${my_min}:${my_sec},${my_mili_sec}`
+        const target_tag = document.querySelector("#timer_text")
+        // target_tag.innerHTML = `${my_hour}:${my_min}:${my_sec},${my_mili_sec}`
+        const intervalID = setInterval(function(){
+            let my_date = new Date();
+            let my_hour =String(my_date.getHours()).padStart(2,"0");
+            let my_min = String(my_date.getMinutes()).padStart(2,"0");
+            let my_sec = String(my_date.getSeconds()).padStart(2,"0");
+            let my_mili_sec = my_date.getMilliseconds();
+            target_tag.innerHTML = `${my_hour}:${my_min}:${my_sec},${my_mili_sec}`
+            return my_hour
+        },1000)
+        // function timer(){
+        //     target_tag.innerHTML = `${my_hour}:${my_min}:${my_sec},${my_mili_sec}`;
+        // }
+
+        // vs .innerText : HTML 포함 사용 vs text만 사용
+
+
 
         //알람을 설정하려면??
+        const alarm_form = document.querySelector("#alarm_form")
+        const submit_btn = alarm_form.querySelector("#set_alarm");
         // if(내가 원하는 시간 == my_hour){
         //     if(내가 원하는 분 == my_min){
         //         //알람 팝업을 보여준다.
@@ -115,8 +138,52 @@
         //     }
         // }
         
+        // js event 전파단계 : capture[상위>대상] --> target[대상] --> bubble[해당>상위]
+        // .preventDefault()
+        // .stopPropagination()
+
+        alarm_form.addEventListener("submit",function(e){
+            e.preventDefault(); // 이벤트 전파 금지
+            save_alarm(); // 알람을 localStorage에 저장하기
+            alarm_check(); // 알림이 설정된 경우, 설정된 알람을 체크
+            clear_alarm(); // 저장한 뒤에는 입력필드를 초기화하기
+            // let alarm_hour = document.querySelector("#alarm_hour")
+            // let alarm_min = document.querySelector("#alarm_min")
+            // let alarm_message = document.querySelector("#alarm_message")
+            // console.log(alarm_hour.value, alarm_min.value, alarm_message.value);
+        })
+
+        function alarm_check(){
+            let schedule_list = []
+            if(localStorage.length){
+                console.log("등록된 알람이 있습니다.");
+                // show_alarm(); //필요시 만들수 있음, 만들어 볼것
+            }
+        }
+
+        function save_alarm(){
+            let schedules = {
+                hours : alarm_hour.value,
+                mins : alarm_min.value,
+                message : alarm_message.value
+            }
+            localStorage.setItem("schedule", JSON.stringify(schedules));
+        }
+
+        function clear_alarm(){
+            alarm_hour.value=alarm_min.value=alarm_message.value = "";
+        }
+
         // .setTimeout() : 지정시간이 종료되면~
         // .setInterval() : 매 지정 시간마다 (반복)~
+
+
+        // p.118~121
+        // .setTimeout() : 지정시간이 종료되면...
+        // .setInterval() : 매 지정시간마다 (반복)...
+        close_pop.onclick=function(){
+            window.close();
+        }
     </script>
 </body>
 </html>
