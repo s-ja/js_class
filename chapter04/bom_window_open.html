@@ -11,8 +11,9 @@
     <p>브라우저 객체 모델 중 최상위 객체 window에 정의된 메소드를 살펴봄</p>
     <h2>window 객체 메소드</h2>
     <ul>
-        <li>.open() vs close() : URL 페이지를 새 창으로 띄웁니다.
-        <p class="warn"> 단, 사용자가 팝업차단을 해줘야 함</p>
+        <li>
+            .open() vs close() : URL 페이지를 새 창으로 띄웁니다.
+            <p class="warn"> 단, 사용자가 팝업차단을 해줘야 함</p>
         </li>
         <li>
             setInterval() vs clearInterval() : 일정한 간격으로 코드 실행하기 vs 해제하기
@@ -25,9 +26,9 @@
         버튼을 눌러 팝업창을 열어보세요.
         <button id="opener">새창열기 (=팝업)</button>
     </div>
-    <div class="timer">
-        <button id="stopper">멈춤</button>
+    <div id="timer">
     </div>
+    <button id="stopper">멈춤</button>
     <script>
         const window_box = window.document.querySelector(".window");
         const open_btn = window_box.querySelector("#opener");
@@ -53,7 +54,7 @@
         let i = 0
         const timer = document.querySelector("#timer");
         const intervalID = setInterval(function(){
-            i++
+            i++;
             // document.write(i, "<br>");
             timer.innerHTML = `i : ${i}+<br>`;
         }, 3000);
